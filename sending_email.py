@@ -6,7 +6,8 @@ import getingdata
 def send(recipient, text):
     smtp_obj = smtplib.SMTP('smtp.gmail.com', 587)
     smtp_obj.starttls()
-    smtp_obj.login('csoprocom.sa@gmail.com', 'qgks245njsd1')
+    password = input("Введите пароль")
+    smtp_obj.login('csoprocom.sa@gmail.com', password)
     smtp_obj.sendmail('csoprocom.sa@gmail.com', recipient, text)
     smtp_obj.quit()
 
